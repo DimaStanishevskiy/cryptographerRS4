@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Collections;
 
 namespace cryptographerRS4
 {
@@ -23,16 +24,17 @@ namespace cryptographerRS4
             if (openFileInput.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 fileAdress.Text = openFileInput.FileName;
+                BitArray binaryArray = new BitArray(File.ReadAllBytes(openFileInput.FileName));
 
-                string FileContent = "";
+                /*
+                byte FileContent = "";
                 BinaryReader sr = new BinaryReader(File.Open(openFileInput.FileName,FileMode.Open));
-
-                while (sr.PeekChar() > -1)
-                    FileContent += sr.Read();
-
-                FileContentBox.Text = FileContent;
-
+                byte buffer = "";
+                while ((buffer = sr.ReadByte()) != -1)
+                    FileContent += sr.ReadByte();
                 sr.Close();
+                }
+                */
             }
         }
     }
