@@ -32,8 +32,6 @@
             this.InputFileAdressBox = new System.Windows.Forms.TextBox();
             this.buttonSelectInputFile = new System.Windows.Forms.Button();
             this.OutputFileAdressBox = new System.Windows.Forms.TextBox();
-            this.buttonSelectOutputFile = new System.Windows.Forms.Button();
-            this.saveFileOutputDialog = new System.Windows.Forms.SaveFileDialog();
             this.startEncryptionButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -63,25 +61,15 @@
             // 
             this.OutputFileAdressBox.Location = new System.Drawing.Point(49, 76);
             this.OutputFileAdressBox.Name = "OutputFileAdressBox";
+            this.OutputFileAdressBox.ReadOnly = true;
             this.OutputFileAdressBox.Size = new System.Drawing.Size(343, 22);
             this.OutputFileAdressBox.TabIndex = 2;
             // 
-            // buttonSelectOutputFile
-            // 
-            this.buttonSelectOutputFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSelectOutputFile.Location = new System.Drawing.Point(409, 76);
-            this.buttonSelectOutputFile.Name = "buttonSelectOutputFile";
-            this.buttonSelectOutputFile.Size = new System.Drawing.Size(51, 22);
-            this.buttonSelectOutputFile.TabIndex = 3;
-            this.buttonSelectOutputFile.Text = "...";
-            this.buttonSelectOutputFile.UseVisualStyleBackColor = true;
-            this.buttonSelectOutputFile.Click += new System.EventHandler(this.buttonSelectOutputFile_Click);
-            // 
             // startEncryptionButton
             // 
-            this.startEncryptionButton.Location = new System.Drawing.Point(359, 117);
+            this.startEncryptionButton.Location = new System.Drawing.Point(410, 76);
             this.startEncryptionButton.Name = "startEncryptionButton";
-            this.startEncryptionButton.Size = new System.Drawing.Size(101, 35);
+            this.startEncryptionButton.Size = new System.Drawing.Size(51, 24);
             this.startEncryptionButton.TabIndex = 4;
             this.startEncryptionButton.Text = "Start";
             this.startEncryptionButton.UseVisualStyleBackColor = true;
@@ -91,9 +79,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 607);
+            this.ClientSize = new System.Drawing.Size(558, 143);
             this.Controls.Add(this.startEncryptionButton);
-            this.Controls.Add(this.buttonSelectOutputFile);
             this.Controls.Add(this.OutputFileAdressBox);
             this.Controls.Add(this.buttonSelectInputFile);
             this.Controls.Add(this.InputFileAdressBox);
@@ -110,8 +97,6 @@
         private System.Windows.Forms.TextBox InputFileAdressBox;
         private System.Windows.Forms.Button buttonSelectInputFile;
         private System.Windows.Forms.TextBox OutputFileAdressBox;
-        private System.Windows.Forms.Button buttonSelectOutputFile;
-        private System.Windows.Forms.SaveFileDialog saveFileOutputDialog;
         private System.Windows.Forms.Button startEncryptionButton;
     }
 }

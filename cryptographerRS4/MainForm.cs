@@ -28,22 +28,48 @@ namespace cryptographerRS4
             }
         }
 
-        private void buttonSelectOutputFile_Click(object sender, EventArgs e)
-        {
-            saveFileOutputDialog.DefaultExt = "txt";
-            if (saveFileOutputDialog.ShowDialog() == DialogResult.OK)
-            {
-                
-                OutputFileAdressBox.Text = saveFileOutputDialog.FileName;
-            }
-        }
-
         private void startEncryptionButton_Click(object sender, EventArgs e)
         {
-            BinaryReader reader = new BinaryReader(File.Open(InputFileAdressBox.Text, FileMode.Open));
-            BinaryWriter writer = new BinaryWriter(File.Open(OutputFileAdressBox.Text, FileMode.Create));
+            BinaryReader reader;
+            try
+            {
+                reader = new BinaryReader(File.Open(InputFileAdressBox.Text, FileMode.Open));
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка открытия файла");
+                return;
+            }
+            string oldExtension = Path.GetExtension(InputFileAdressBox.Text);
+            string extension = "";
+            bool flag = oldExtension == ".efj";
+            if (flag)
+            {
+                extension = "";
 
-            for (int i = 0; i < reader.BaseStream.Length; i++)
+                char buffer = reader.ReadChar();
+                while(buffer != '.')
+                    buffer = reader.ReadChar();
+                while (buffer != '|')
+                {
+                    extension += buffer;
+                    buffer = reader.ReadChar();
+                }
+            }
+            else extension = ".efj";
+
+            string outputFileAdress = InputFileAdressBox.Text;
+            outputFileAdress = Path.ChangeExtension(InputFileAdressBox.Text, extension);
+            OutputFileAdressBox.Text = outputFileAdress;
+
+            BinaryWriter writer = new BinaryWriter(File.Open(outputFileAdress, FileMode.Create));
+
+            if (!flag)
+            {
+                writer.Write(oldExtension);
+                writer.Write('|');
+            }
+            for (long i = reader.BaseStream.Position; i < reader.BaseStream.Length; i++)
             {
                 byte buffer =reader.ReadByte();
                 buffer = Convert.ToByte(buffer ^ 0xA);
