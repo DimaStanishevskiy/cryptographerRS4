@@ -37,12 +37,12 @@ namespace cryptographerRS4
             }
             catch
             {
-                MessageBox.Show("Ошибка открытия файла");
+                MessageBox.Show("Failed to open the file");
                 return;
             }
             string oldExtension = Path.GetExtension(InputFileAdressBox.Text);
             string extension = "";
-            bool flag = oldExtension == ".efj";
+            bool flag = oldExtension == ".ef";
             if (flag)
             {
                 extension = "";
@@ -56,11 +56,10 @@ namespace cryptographerRS4
                     buffer = reader.ReadChar();
                 }
             }
-            else extension = ".efj";
+            else extension = ".ef";
 
             string outputFileAdress = InputFileAdressBox.Text;
             outputFileAdress = Path.ChangeExtension(InputFileAdressBox.Text, extension);
-            OutputFileAdressBox.Text = outputFileAdress;
 
             BinaryWriter writer = new BinaryWriter(File.Open(outputFileAdress, FileMode.Create));
 
