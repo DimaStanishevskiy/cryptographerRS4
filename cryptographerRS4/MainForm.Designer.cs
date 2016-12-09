@@ -35,8 +35,8 @@
             this.startEncryptionButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.KeyBox = new System.Windows.Forms.MaskedTextBox();
+            this.DeleteFilecheckBox = new System.Windows.Forms.CheckBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
@@ -92,23 +92,23 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Key";
             // 
-            // maskedTextBox1
+            // KeyBox
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(34, 87);
-            this.maskedTextBox1.Mask = "LLLLLLLL";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(65, 22);
-            this.maskedTextBox1.TabIndex = 9;
+            this.KeyBox.Location = new System.Drawing.Point(34, 87);
+            this.KeyBox.Mask = "&&&&&&&&";
+            this.KeyBox.Name = "KeyBox";
+            this.KeyBox.Size = new System.Drawing.Size(74, 22);
+            this.KeyBox.TabIndex = 9;
             // 
-            // checkBox1
+            // DeleteFilecheckBox
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(119, 87);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(128, 21);
-            this.checkBox1.TabIndex = 10;
-            this.checkBox1.Text = "Delete input file";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.DeleteFilecheckBox.AutoSize = true;
+            this.DeleteFilecheckBox.Location = new System.Drawing.Point(127, 87);
+            this.DeleteFilecheckBox.Name = "DeleteFilecheckBox";
+            this.DeleteFilecheckBox.Size = new System.Drawing.Size(128, 21);
+            this.DeleteFilecheckBox.TabIndex = 10;
+            this.DeleteFilecheckBox.Text = "Delete input file";
+            this.DeleteFilecheckBox.UseVisualStyleBackColor = true;
             // 
             // progressBar
             // 
@@ -123,8 +123,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(356, 181);
             this.Controls.Add(this.progressBar);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.DeleteFilecheckBox);
+            this.Controls.Add(this.KeyBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.startEncryptionButton);
@@ -145,8 +145,8 @@
         private System.Windows.Forms.Button startEncryptionButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.MaskedTextBox KeyBox;
+        private System.Windows.Forms.CheckBox DeleteFilecheckBox;
         private System.Windows.Forms.ProgressBar progressBar;
     }
 }
