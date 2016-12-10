@@ -48,14 +48,14 @@
             // 
             this.InputFileAdressBox.Location = new System.Drawing.Point(34, 38);
             this.InputFileAdressBox.Name = "InputFileAdressBox";
-            this.InputFileAdressBox.Size = new System.Drawing.Size(221, 22);
+            this.InputFileAdressBox.Size = new System.Drawing.Size(263, 22);
             this.InputFileAdressBox.TabIndex = 0;
             // 
             // buttonSelectInputFile
             // 
             this.buttonSelectInputFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSelectInputFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSelectInputFile.Image")));
-            this.buttonSelectInputFile.Location = new System.Drawing.Point(271, 34);
+            this.buttonSelectInputFile.Location = new System.Drawing.Point(312, 34);
             this.buttonSelectInputFile.Name = "buttonSelectInputFile";
             this.buttonSelectInputFile.Size = new System.Drawing.Size(48, 31);
             this.buttonSelectInputFile.TabIndex = 1;
@@ -65,7 +65,7 @@
             // startEncryptionButton
             // 
             this.startEncryptionButton.Image = ((System.Drawing.Image)(resources.GetObject("startEncryptionButton.Image")));
-            this.startEncryptionButton.Location = new System.Drawing.Point(271, 83);
+            this.startEncryptionButton.Location = new System.Drawing.Point(312, 83);
             this.startEncryptionButton.Name = "startEncryptionButton";
             this.startEncryptionButton.Size = new System.Drawing.Size(48, 31);
             this.startEncryptionButton.TabIndex = 4;
@@ -95,15 +95,15 @@
             // KeyBox
             // 
             this.KeyBox.Location = new System.Drawing.Point(34, 87);
-            this.KeyBox.Mask = "&&&&&&&&";
+            this.KeyBox.Mask = "&&&&&&&&&&&&&&&&";
             this.KeyBox.Name = "KeyBox";
-            this.KeyBox.Size = new System.Drawing.Size(74, 22);
+            this.KeyBox.Size = new System.Drawing.Size(138, 22);
             this.KeyBox.TabIndex = 9;
             // 
             // DeleteFilecheckBox
             // 
             this.DeleteFilecheckBox.AutoSize = true;
-            this.DeleteFilecheckBox.Location = new System.Drawing.Point(127, 87);
+            this.DeleteFilecheckBox.Location = new System.Drawing.Point(178, 88);
             this.DeleteFilecheckBox.Name = "DeleteFilecheckBox";
             this.DeleteFilecheckBox.Size = new System.Drawing.Size(128, 21);
             this.DeleteFilecheckBox.TabIndex = 10;
@@ -114,14 +114,14 @@
             // 
             this.progressBar.Location = new System.Drawing.Point(34, 132);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(285, 23);
+            this.progressBar.Size = new System.Drawing.Size(326, 23);
             this.progressBar.TabIndex = 11;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 181);
+            this.ClientSize = new System.Drawing.Size(393, 181);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.DeleteFilecheckBox);
             this.Controls.Add(this.KeyBox);
@@ -131,7 +131,7 @@
             this.Controls.Add(this.buttonSelectInputFile);
             this.Controls.Add(this.InputFileAdressBox);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "CryptographerRS4";
             this.ResumeLayout(false);
             this.PerformLayout();
 

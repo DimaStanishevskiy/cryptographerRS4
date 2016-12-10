@@ -45,16 +45,16 @@ namespace cryptographerRS4
                 return;
             }
 
-            // проверяет длину ключа, если меньше 8 то сообщает об ошибке
-            if(KeyBox.Text.Length != 8)
+            // проверяет длину ключа, если меньше 16 то сообщает об ошибке
+            if(KeyBox.Text.Length != 16)
             {
                 MessageBox.Show("KeyError");
                 return;
             }
 
             // получает ключ, и модифицирует таблицей перестановок.
-            byte[] key = new byte[8];
-            for (int i = 0; i < 8; i++)
+            byte[] key = new byte[16];
+            for (int i = 0; i < 16; i++)
                 key[i] = transpositionTable[Convert.ToByte(KeyBox.Text[i])];
 
             //проверяет расширение файла, если оно .ef, то получает настоящее расширение в начале файла
@@ -96,7 +96,7 @@ namespace cryptographerRS4
             int j = 0;
             for (long i = reader.BaseStream.Position; i < reader.BaseStream.Length; i++, j++)
             {
-                if (j == 8) j = 0;
+                if (j == 16) j = 0;
                 progressBar.Value++;
                 byte buffer =reader.ReadByte();
                 buffer = Convert.ToByte(buffer ^ key[j]);
