@@ -77,11 +77,20 @@ namespace cryptographerRS4
             }
             else extension = ".ef";
 
-            string outputFileAdress = InputFileAdressBox.Text;
-            outputFileAdress = Path.ChangeExtension(InputFileAdressBox.Text, extension);
+            string outputFileAdress = OutputFileAdressBox.Text + Path.GetFileName(InputFileAdressBox.Text);
+            outputFileAdress = Path.ChangeExtension(outputFileAdress, extension);
 
-            BinaryWriter writer = new BinaryWriter(File.Open(outputFileAdress, FileMode.Create));
 
+            BinaryWriter writer;
+            try
+            {
+                writer = new BinaryWriter(File.Open(outputFileAdress, FileMode.Create));
+            }
+            catch
+            {
+                MessageBox.Show("Failed to create the file");
+                return;
+            }
             if (!flag)
             {
                 writer.Write(oldExtension);
@@ -110,6 +119,14 @@ namespace cryptographerRS4
             if(DeleteFilecheckBox.Checked)
                 File.Delete(InputFileAdressBox.Text);
             progressBar.Value = 0;
+        }
+
+        private void buttonSelectOutputFile_Click(object sender, EventArgs e)
+        {
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                OutputFileAdressBox.Text = folderBrowserDialog.SelectedPath;
+            }
         }
     }
 }
